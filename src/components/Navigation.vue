@@ -3,8 +3,9 @@
     <nav
       class="px-2 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto flex items-center gap-7 h-16 text-white"
     >
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/leaflet">Leaflet</RouterLink>
+      <router-link to="/">Home</router-link>
+      <router-link to="/leaflet">Leaflet</router-link>
+      <router-link to="/leaflet-v3">Leaflet V3</router-link>
     </nav>
   </header>
 </template>

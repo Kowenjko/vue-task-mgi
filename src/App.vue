@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue'
 import Navigation from './components/Navigation.vue'
 </script>
@@ -8,7 +8,7 @@ import Navigation from './components/Navigation.vue'
   <Navigation />
   <Suspense>
     <DefaultLayout>
-      <RouterView />
+      <router-view />
     </DefaultLayout>
   </Suspense>
 </template>
