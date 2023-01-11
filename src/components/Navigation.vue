@@ -5,7 +5,7 @@
     >
       <router-link to="/">Home</router-link>
       <router-link to="/leaflet">Leaflet</router-link>
-      <router-link to="/leaflet-v3">Leaflet V3</router-link>
+      <router-link to="/leaflet-v3">Leaflet v3</router-link>
     </nav>
   </header>
 </template>
