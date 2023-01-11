@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createMemoryHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LeafletView from '../views/LeafletView.vue'
 
 const router = createRouter({
-  history: createWebHistory('/vue-task-mgi/'),
+  history: createMemoryHistory('/vue-task-mgi/'),
   routes: [
     {
       path: '/',
