@@ -37,7 +37,7 @@ const changePage = (number) => (numberPage.value = number)
     <SearchPost v-model="title" />
     <DefaultButton name="Open Chart" @click-button="openPopUp = true" />
   </div>
-  <PopUp @close="openPopUp = false" :open="openPopUp">
+  <PopUp @close="openPopUp = false" :open="openPopUp" width="900">
     <ChartComments :comments="comments" />
   </PopUp>
 
