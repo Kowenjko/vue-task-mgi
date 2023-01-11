@@ -12,7 +12,7 @@ const props = defineProps({
   },
 })
 const close = () => emit('close')
-const defaultClass = `absolute left-1/2 top-1/2 bg-white rounded-lg w-[${props.width}px] border border-gray-300 transition-all p-5 cursor-default z-10`
+const defaultClass = `absolute left-1/2 top-1/2 bg-white rounded-lg  border border-gray-300 transition-all p-5 cursor-default z-10`
 </script>
 
 <template>
@@ -22,6 +22,7 @@ const defaultClass = `absolute left-1/2 top-1/2 bg-white rounded-lg w-[${props.w
     :class="props.open ? 'opacity-100 visible' : 'opacity-0 invisible'"
   >
     <div
+      :style="{ width: props.width + 'px' }"
       @click.stop=""
       :class="[
         defaultClass,

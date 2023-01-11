@@ -18,7 +18,7 @@ const addMarker = () => emit('addMarker')
   <div class="flex flex-col">
     <label class="text-sm font-bold" for="marker">Name marker</label>
     <input
-      class="border border-gray-500 rounded-md h-10 pl-4 w-80 my-4"
+      class="border border-gray-500 rounded-md h-10 pl-4 my-4"
       type="text"
       name="marker"
       @input="updateNameMarker"
@@ -28,7 +28,7 @@ const addMarker = () => emit('addMarker')
     <div class="flex flex-col">
       <label class="text-sm font-bold" for="lat">Lat</label>
       <input
-        class="border border-gray-500 rounded-md h-10 pl-4 w-80 my-4"
+        class="border border-gray-500 rounded-md h-10 pl-4 my-4"
         type="text"
         name="lat"
         @input="updateLat"
@@ -37,7 +37,7 @@ const addMarker = () => emit('addMarker')
       />
       <label class="text-sm font-bold" for="lng">Lng</label>
       <input
-        class="border border-gray-500 rounded-md h-10 pl-4 w-80 my-4"
+        class="border border-gray-500 rounded-md h-10 pl-4 my-4"
         type="text"
         name="lng"
         @input="updateLng"
