@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LeafletView from '../views/LeafletView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/vue-task-mgi/'),
   routes: [
     {
       path: '/',
