@@ -27,8 +27,9 @@ const closePopUp = () => {
 
 const addMarker = () => {
   if (lat.value && lng.value && nameMarker.value) {
-    markers.value = [...markers.value, { name: nameMarker.value, lat: lat.value, lng: lng.value }]
-    useLocalstorage({ name: nameMarker.value, lat: lat.value, lng: lng.value })
+    const newMarker = { name: nameMarker.value, lat: lat.value, lng: lng.value }
+    markers.value = [...markers.value, newMarker]
+    useLocalstorage(newMarker)
   } else alert('Виввели не всі дані')
   closePopUp()
 }
