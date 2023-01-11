@@ -15,7 +15,7 @@ comments.value = await useLoadData(`${POSTS}/${props.post.id}/comments`)
 </script>
 
 <template>
-  <CardLayout class="text-white">
+  <CardLayout class="text-white transition-all">
     <h5 class="font-bold text-[#237BFF]">{{ props.post.title }}</h5>
     <p class="py-4">{{ props.post.body }}</p>
     <p class="font-bold pb-4">

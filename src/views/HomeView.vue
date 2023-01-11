@@ -41,9 +41,9 @@ const changePage = (number) => (numberPage.value = number)
     <ChartComments :comments="comments" />
   </PopUp>
 
-  <div v-if="paginationsPage.length > 0">
+  <div v-if="filterPosts.length > 0">
     <PoginationsPost :pageCount="pageCount" :numberPage="numberPage" @changePage="changePage" />
-    <PostsList class="transition-all" :posts="paginationsPage" />
+    <PostsList :posts="paginationsPage" />
   </div>
   <div class="text-3xl text-center font-bold" v-else>No result</div>
 </template>
