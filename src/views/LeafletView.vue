@@ -5,7 +5,7 @@ import InputMarker from '../components/InputMarker.vue'
 import DefaultButton from '../components/DefaultButton.vue'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import { COORDINATE_UKRAINE } from '../services/CollectionNames'
+import { COORDINATE_UKRAINE, ICON_MARKER } from '../services/CollectionNames'
 import { useLocalstorage } from '../composables/useLocalstorage'
 
 const openPopUpMarker = ref(false)
@@ -24,9 +24,11 @@ const closePopUp = () => {
   lng.value = null
 }
 
+const myIcon = L.icon({ iconUrl: ICON_MARKER })
+
 const addMarker = () => {
   if (lat.value && lng.value && nameMarker.value) {
-    L.marker([lat.value, lng.value]).addTo(map).bindTooltip(nameMarker.value)
+    L.marker([lat.value, lng.value], { icon: myIcon }).addTo(map).bindTooltip(nameMarker.value)
     useLocalstorage({ name: nameMarker.value, lat: lat.value, lng: lng.value })
   } else alert('Виввели не всі дані')
   closePopUp()
@@ -43,7 +45,7 @@ const onMapClick = (event) => {
 }
 
 const loadMarkers = (markers) =>
-  markers.forEach((marker) => L.marker([marker.lat, marker.lng]).addTo(map).bindTooltip(marker.name))
+  markers.forEach((marker) => L.marker([marker.lat, marker.lng], { icon: myIcon }).addTo(map).bindTooltip(marker.name))
 
 onMounted(() => {
   map = L.map('map').setView(COORDINATE_UKRAINE, 6)
