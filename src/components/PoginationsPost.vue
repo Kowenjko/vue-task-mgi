@@ -13,7 +13,7 @@ const changePage = (count) => emit('changePage', count)
   <ul class="flex gap-4" v-if="pageCount > 1">
     <li
       class="p-2 cursor-pointer rounded-lg hover:bg-[#F0F6FF]"
-      :class="numberPage === count ? 'bg-[#201F38] text-white font-bold' : ''"
+      :class="numberPage === count ? 'bg-[#201F38] text-white font-bold hover:bg-[#201F38]' : ''"
       @click="changePage(count)"
       v-for="count in pageCount"
       :key="count"

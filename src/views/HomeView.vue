@@ -1,13 +1,13 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { useLoadData } from '../composables/useLoadData'
-import { POSTS, PAGINATION_LIMIT, COMMENTS } from '../services/CollectionNames'
 import SearchPost from '../components/SearchPost.vue'
 import PoginationsPost from '../components/PoginationsPost.vue'
 import PostsList from '../components/PostsList.vue'
 import PopUp from '../components/PopUp.vue'
 import ChartComments from '../components/ChartComments.vue'
 import DefaultButton from '../components/DefaultButton.vue'
+import { useLoadData } from '../composables/useLoadData'
+import { POSTS, PAGINATION_LIMIT, COMMENTS } from '../services/CollectionNames'
 
 const title = ref('')
 const numberPage = ref(1)
@@ -41,9 +41,9 @@ const changePage = (number) => (numberPage.value = number)
     <ChartComments :comments="comments" />
   </PopUp>
 
-  <div v-if="posts.length > 0">
+  <div v-if="paginationsPage.length > 0">
     <PoginationsPost :pageCount="pageCount" :numberPage="numberPage" @changePage="changePage" />
-    <PostsList :posts="paginationsPage" />
+    <PostsList class="transition-all" :posts="paginationsPage" />
   </div>
-  <div v-else>Loading...</div>
+  <div class="text-3xl text-center font-bold" v-else>No result</div>
 </template>
