@@ -2,8 +2,28 @@
 const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
   modelValue: {
-    type: String,
+    type: [String, Number],
     default: '',
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    default: 'text',
+  },
+  placeholder: {
+    type: String,
+    required: true,
+  },
+  label: {
+    type: String,
+    required: true,
+  },
+  width: {
+    type: String,
+    default: '100%',
   },
 })
 const updateValue = (e) => {
@@ -12,28 +32,30 @@ const updateValue = (e) => {
 </script>
 
 <template>
-  <div class="form-input w-80 mt-7">
+  <div class="form-input" :style="{ width: width }">
     <input
-      class="input-text outline-none border border-gray-500"
-      type="text"
-      name="title"
-      placeholder="Search post"
+      class="input-text"
+      :type="type"
+      :name="name"
+      :id="name"
+      :placeholder="placeholder"
       :value="modelValue"
       @input="updateValue"
     />
-    <label for="title" class="input-label">Search post</label>
+    <label :for="name" class="input-label">{{ label }}</label>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .form {
   &-input {
-    margin-bottom: 30px;
     position: relative;
   }
 }
 .input {
   &-text {
+    border: 1px solid rgb(107, 114, 128);
+    outline: none;
     padding: 0 10px;
     height: 40px;
     border-radius: 7px;
@@ -65,7 +87,7 @@ const updateValue = (e) => {
     z-index: -1;
     transition: 0.3s;
     font-size: 13px;
-    color: var(--primary);
+    color: #201f38;
   }
 }
 .v-enter-active,

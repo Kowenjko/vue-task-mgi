@@ -8,7 +8,7 @@ const props = defineProps({
   },
   width: {
     type: String,
-    default: '900',
+    default: '900px',
   },
 })
 const close = () => emit('close')
@@ -22,7 +22,7 @@ const defaultClass = `absolute left-1/2 top-1/2 bg-white rounded-lg  border bord
     :class="props.open ? 'opacity-100 visible' : 'opacity-0 invisible'"
   >
     <div
-      :style="{ width: props.width + 'px' }"
+      :style="{ width: props.width }"
       @click.stop=""
       :class="[
         defaultClass,

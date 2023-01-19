@@ -7,7 +7,7 @@ const props = defineProps({
 
 <template>
   <button
-    class="bg-[#237BFF] text-white h-10 px-5 rounded-lg hover:bg-[#11305f] transition-all"
+    class="bg-[#237BFF] text-white px-5 py-3 rounded-lg hover:bg-[#11305f] transition-all w-full"
     @click="emit('clickButton')"
   >
     {{ props.name }}
