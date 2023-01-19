@@ -48,7 +48,7 @@ const onMapClick = (event) => {
   <div>
     <DefaultButton class="mt-4 w-[15%]" name="Create Marker" @click-button="openPopUpMarker = true" />
     <l-map
-      class="mt-4 z-0 w-full rounded-lg shadow-2xl shadow-[#201F38]"
+      class="mt-4 z-0 w-full rounded-lg shadow-xl"
       :zoom="6"
       :minZoom="3"
       :maxZoom="18"
