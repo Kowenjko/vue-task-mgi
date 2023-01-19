@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-import { useLoadData } from '../composables/useLoadData'
+import { useFetch } from '../composables/useLoadData'
 import { POSTS } from '../services/CollectionNames'
 import CardLayout from '../layouts/CardLayout.vue'
 import ChartComments from './ChartComments.vue'
@@ -9,9 +8,7 @@ const props = defineProps({
   post: { type: Object },
 })
 
-const comments = ref([])
-
-comments.value = await useLoadData(`${POSTS}/${props.post.id}/comments`)
+const { data: comments } = await useFetch(`${POSTS}/${props.post.id}/comments`)
 </script>
 
 <template>

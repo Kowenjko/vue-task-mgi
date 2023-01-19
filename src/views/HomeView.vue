@@ -6,18 +6,16 @@ import PostItem from '../components/PostItem.vue'
 import PopUp from '../components/PopUp.vue'
 import ChartComments from '../components/ChartComments.vue'
 import DefaultButton from '../components/DefaultButton.vue'
-import { useLoadData } from '../composables/useLoadData'
+import { useFetch } from '../composables/useLoadData'
 import { POSTS, PAGINATION_LIMIT, COMMENTS } from '../services/CollectionNames'
 
 const title = ref('')
 const numberPage = ref(1)
-const posts = ref([])
-const comments = ref([])
 const openPopUp = ref(false)
 const paginationLimit = PAGINATION_LIMIT
 
-posts.value = await useLoadData(POSTS)
-comments.value = await useLoadData(COMMENTS)
+const { data: posts } = await useFetch(POSTS)
+const { data: comments } = await useFetch(COMMENTS)
 
 const filterPosts = computed(() =>
   posts.value.filter((post) => post.title.toLowerCase().includes(title.value.toLowerCase()))

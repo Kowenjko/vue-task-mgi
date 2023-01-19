@@ -36,7 +36,7 @@ const addMarker = () => {
 
 const onMapClick = (event) => {
   openPopUpMarker.value = true
-  console.log('Координати:' + event.latlng)
+  console.log('Координати: ' + event.latlng)
   if (event.latlng) {
     lat.value = event.latlng.lat
     lng.value = event.latlng.lng
