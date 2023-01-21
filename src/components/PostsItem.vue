@@ -13,8 +13,8 @@ const { data: comments } = await useFetch(`${POSTS}/${props.post.id}/comments`)
 
 <template>
   <CardLayout class="text-white">
-    <h5 class="font-bold text-[#237BFF]">{{ props.post.title }}</h5>
-    <p class="py-4">{{ props.post.body }}</p>
+    <h5 class="font-bold text-[#237BFF]">{{ post.title }}</h5>
+    <p class="py-4">{{ post.body }}</p>
     <p class="font-bold pb-4">
       Count comments: <span class="font-normal">{{ comments.length }}</span>
     </p>

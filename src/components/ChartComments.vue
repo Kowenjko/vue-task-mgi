@@ -28,5 +28,5 @@ const data = reactive({
 
 <template>
   <LineChart class="bg-white" v-if="props.type === 'line'" :chartData="data" />
-  <DoughnutChart class="bg-white rounded-lg" v-if="props.type === 'doughnut'" :chartData="data" />
+  <DoughnutChart class="bg-white rounded-lg h-96" v-if="props.type === 'doughnut'" :chartData="data" />
 </template>

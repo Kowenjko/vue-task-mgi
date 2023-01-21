@@ -1,47 +1,13 @@
 <script setup>
-import { ref } from 'vue'
 import PopUp from '../components/PopUp.vue'
 import InputMarker from '../components/InputMarker.vue'
 import DefaultButton from '../components/DefaultButton.vue'
 import 'leaflet/dist/leaflet.css'
 import { LMap, LIcon, LTileLayer, LMarker, LTooltip } from '@vue-leaflet/vue-leaflet'
+import { useActionsLeaflet } from '../composables/useActionsLeaflet'
 import { COORDINATE_UKRAINE, LEAFLET_URL, ICON_MARKER } from '../services/CollectionNames'
-import { useLocalstorage } from '../composables/useLocalstorage'
 
-const openPopUpMarker = ref(false)
-
-const markers = ref([])
-const nameMarker = ref('')
-const lat = ref(null)
-const lng = ref(null)
-
-const { markers: markersStorage } = useLocalstorage()
-if (markersStorage) markers.value = markersStorage
-
-const closePopUp = () => {
-  openPopUpMarker.value = false
-  nameMarker.value = ''
-  lat.value = null
-  lng.value = null
-}
-
-const addMarker = () => {
-  if (lat.value && lng.value && nameMarker.value) {
-    const newMarker = { name: nameMarker.value, lat: lat.value, lng: lng.value }
-    markers.value = [...markers.value, newMarker]
-    useLocalstorage(newMarker)
-  } else alert('Ви ввели не всі дані')
-  closePopUp()
-}
-
-const onMapClick = (event) => {
-  openPopUpMarker.value = true
-  console.log('Координати: ' + event.latlng)
-  if (event.latlng) {
-    lat.value = event.latlng.lat
-    lng.value = event.latlng.lng
-  }
-}
+const { openPopUpMarker, markers, addMarker, onMapClick, closePopUp, lat, lng, nameMarker } = useActionsLeaflet()
 </script>
 
 <template>
