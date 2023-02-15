@@ -4,7 +4,7 @@
       class="px-2 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto flex items-center gap-7 h-16 text-white"
     >
       <router-link to="/">Home</router-link>
-      <router-link to="/leaflet">Leaflet</router-link>
+      <router-link to="/leaflet">Leaflet 2</router-link>
     </nav>
   </header>
 </template>
